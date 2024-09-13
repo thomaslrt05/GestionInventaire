@@ -1,0 +1,63 @@
+﻿<Page x:Class="Gestion_Inventaire.Views.Pages.EquipementListingPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Gestion_Inventaire.Views.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="EquipementListingPage">
+
+    <Grid>
+        <Image Source="/img/fond.jpg" Stretch="UniformToFill"></Image>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Label Content="Équipements" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="60" FontWeight="DemiBold"></Label>
+        </Grid>
+        <Grid Height="300">
+            <ScrollViewer VerticalScrollBarVisibility="Disabled" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="40">
+                <DataGrid Name="dataGrid" AutoGenerateColumns="False" Background="Transparent" HeadersVisibility="Column" MaxHeight="Infinity">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Width="*" Header="Description" Binding="{Binding Equipement.Description}"/>
+                        <DataGridTextColumn Width="*" Header="Type" Binding="{Binding Type.Name}"/>
+                        <DataGridTextColumn Width="*" Header="Marque" Binding="{Binding Mark.Name}"/>
+                        <DataGridTemplateColumn Width="*" Header="Spécificitées">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Content="Voir" Click="ShowSpecificity_Button" Tag="{Binding Equipement.Id}"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                        <DataGridTemplateColumn Width="*" Header="Modifier">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Content="Modifier" Click="ModifyEquipment" Tag="{Binding Equipement.Id}"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        
+                        <DataGridTemplateColumn Width="*" Header="Supprimer">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Content="Supprimer" Click="Delete_Click" Tag="{Binding Equipement.Id}"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+
+                </DataGrid>
+            </ScrollViewer>
+        </Grid>
+        <Grid Height="75" VerticalAlignment="Bottom">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button Height="50" Width="150" Content="Ajouter un équipement" Click="AddEquipement_Click"/>
+            <Button Height="50" Width="100" Content="Retour au menu " Click="BackToLandingPage_Click" Grid.Column="1"/>
+        </Grid>
+    </Grid>
+</Page>

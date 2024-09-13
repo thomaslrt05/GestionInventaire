@@ -1,0 +1,25 @@
+﻿<Page x:Class="Gestion_Inventaire.Views.Pages.LandingPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Gestion_Inventaire.Views.Pages"
+      d:DataContext="{Binding RelativeSource={RelativeSource Self}}"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="LandingPage">
+    
+    <Grid>
+        <Image Source="/img/fond.jpg" Stretch="UniformToFill"  ></Image>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Label Content="Gestionnaire d'inventaire" Grid.Row="0" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontSize="50" FontWeight="Bold"></Label>
+            <Button Grid.Row="1" Command="{Binding CoursePage}" Content="Cours" VerticalAlignment="Bottom" Width="300" Height="70" FontSize="30" Background="Azure" ></Button>
+            <Button Grid.Row="2" Command="{Binding EquipementPage}" Content="Équipement" VerticalAlignment="Top" Width="300" Height="70" FontSize="30" Background="Azure" ></Button>
+        </Grid>
+    </Grid>
+</Page>

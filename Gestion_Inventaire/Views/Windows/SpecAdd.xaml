@@ -1,0 +1,17 @@
+﻿<Window x:Class="Gestion_Inventaire.Views.Windows.SpecAdd"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Gestion_Inventaire.Views.Windows"
+        mc:Ignorable="d"
+        Title="SpecAdd" Height="300" Width="400">
+    <Grid>
+        <Image Source="/img/fond.jpg" Stretch="UniformToFill"></Image>
+        <StackPanel Margin="10">
+            <Label Content="Description de la Spécificité:" />
+            <TextBox x:Name="specificityNameTextBox" />
+            <Button Content="Créer" Click="CreateSpecificityButton_Click" Margin="0,10,0,0"/>
+        </StackPanel>
+    </Grid>
+</Window>
